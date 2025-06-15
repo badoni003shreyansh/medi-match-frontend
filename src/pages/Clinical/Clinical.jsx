@@ -52,9 +52,7 @@ export default function Clinical() {
     setResponse([{ description: "🔄 Searching for clinical trials... This may take up to 2 minutes for AI analysis." }]);
     
     try {
-      const result = await clinicalAPI.fetchClinicalTrials(formData);
-      
-      console.log("🔍 Raw clinical trials response:", result);
+      const result = await clinicalAPI.fetchClinicalTrials(formData); 
       
       // Handle different response formats
       let trials = [];
@@ -78,8 +76,6 @@ export default function Clinical() {
         }
       }
       
-      console.log("🧹 Before cleanup trials:", trials);
-      
       // Ensure all trials are objects with proper structure
       trials = trials.map((trial, index) => {
         if (typeof trial === 'string') {
@@ -98,14 +94,12 @@ export default function Clinical() {
             }
             cleanedTrial[key] = value;
           });
-          console.log(`🧹 Cleaned trial ${index + 1}:`, cleanedTrial);
           return cleanedTrial;
         } else {
           return { description: `Trial ${index + 1}: ${String(trial)}` };
         }
       });
       
-      console.log("🎯 Final cleaned trials:", trials);
       setResponse(trials);
     } catch (error) {
       console.error("❌ Clinical trials fetch failed:", error);

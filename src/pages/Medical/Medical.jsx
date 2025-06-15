@@ -70,10 +70,6 @@ const Medical = () => {
     try {
       const result = await medicalAPI.processImage(uploadedFile);
       
-      console.log("🔍 Raw API response:", result);
-      console.log("🔍 Response type:", typeof result);
-      console.log("🔍 Response keys:", result ? Object.keys(result) : 'null');
-      
       // Handle different response formats
       let diagnosisText = "No diagnosis found in image.";
       
@@ -82,8 +78,7 @@ const Medical = () => {
           diagnosisText = result;
         } else if (result.answer) {
           // Extract just the content from the answer property
-          diagnosisText = typeof result.answer === 'string' ? result.answer : JSON.stringify(result.answer);
-          console.log("📝 Extracted content:", diagnosisText);
+          diagnosisText = typeof result.answer === 'string' ? result.answer : JSON.stringify(result.answer);      
         } else if (result.diagnosis) {
           diagnosisText = typeof result.diagnosis === 'string' ? result.diagnosis : JSON.stringify(result.diagnosis);
         } else if (result.description) {
@@ -93,9 +88,6 @@ const Medical = () => {
           diagnosisText = JSON.stringify(result, null, 2);
         }
       }
-      
-      // Comprehensive cleanup to remove any "answer" text
-      console.log("🧹 Before cleanup:", diagnosisText);
       
       // Remove "answer": prefix if it exists
       diagnosisText = diagnosisText.replace(/^"answer":\s*/, '');
@@ -109,8 +101,6 @@ const Medical = () => {
       // Clean up whitespace
       diagnosisText = diagnosisText.trim();
       
-      console.log("🧹 After cleanup:", diagnosisText);
-      console.log("🎯 Final diagnosis text:", diagnosisText);
       setAnalysisResult(diagnosisText);
       alert("Image uploaded successfully!");
     } catch (error) {
