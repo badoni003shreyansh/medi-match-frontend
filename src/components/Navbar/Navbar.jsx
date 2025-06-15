@@ -35,7 +35,7 @@ export default function Navbar() {
                     <li><NavLink end to="/" className={linkClass} onClick={closeMenu}>Home</NavLink></li>
                     <li><NavLink to="/medical_analysis" className={linkClass} onClick={closeMenu}>Medical&nbsp;Analysis</NavLink></li>
                     <li><NavLink to="/clinical_trial" className={linkClass} onClick={closeMenu}>Clinical&nbsp;Trial</NavLink></li>
-                    <li><NavLink to="/use_case" className={linkClass} onClick={closeMenu}>Use&nbsp;Case</NavLink></li>
+                    <li><NavLink to="/use_case" className={linkClass} onClick={closeMenu}>Uses</NavLink></li>
                     <li><NavLink to="/contributors" className={linkClass} onClick={closeMenu}>Contributors</NavLink></li>
                 </ul>
             </nav >

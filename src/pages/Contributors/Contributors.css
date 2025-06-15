@@ -1,5 +1,5 @@
 .contributors {
-    padding: 4rem 1.5rem;
+    padding: 2rem 0rem;
     background: #fafbfc;
     text-align: center;
     font-family: 'Outfit', sans-serif;
@@ -89,6 +89,10 @@
     justify-content: center;
     transition: transform 0.3s ease, background 0.3s ease;
     color: #fff;
+}
+
+.contributor-card__links svg {
+  background: transparent !important;  /* ensures icons stay transparent */
 }
 
 .contributor-card__links a:hover {
