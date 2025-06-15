@@ -58,7 +58,10 @@ export default function Clinical() {
       let trials = [];
       
       if (result) {
-        if (Array.isArray(result)) {
+        if (result.results && Array.isArray(result.results)) {
+          // Backend returns {message: "...", results: [...]}
+          trials = result.results;
+        } else if (Array.isArray(result)) {
           trials = result;
         } else if (result.answer) {
           if (Array.isArray(result.answer)) {
@@ -306,36 +309,85 @@ export default function Clinical() {
                         ) : (
                           <>
                             <h4 className="clinical__trial-title">
-                              {trial.trial_id || trial.title || `Trial ${index + 1}`}
+                              {trial.title || trial.trial_id || `Trial ${index + 1}`}
                             </h4>
-                            <p className="clinical__trial-description">
-                              {trial.trial_summary || trial.description || 
-                               (typeof trial === 'string' ? trial : 
-                                typeof trial === 'object' ? JSON.stringify(trial, null, 2) : 
-                                String(trial))}
-                            </p>
-                            {trial.suitability && (
+                            
+                            {/* Trial Summary */}
+                            {trial.analysis?.trial_summary && (
                               <div className="clinical__trial-criteria">
-                                <strong>Suitability:</strong>
-                                <p>{typeof trial.suitability === 'string' ? trial.suitability : JSON.stringify(trial.suitability)}</p>
+                                <strong>📋 Trial Overview:</strong>
+                                <p>{trial.analysis.trial_summary}</p>
                               </div>
                             )}
-                            {trial.potential_benefits && (
+                            
+                            {/* Suitability Score */}
+                            {trial.analysis?.suitability_score && (
                               <div className="clinical__trial-criteria">
-                                <strong>Potential Benefits:</strong>
-                                <p>{typeof trial.potential_benefits === 'string' ? trial.potential_benefits : JSON.stringify(trial.potential_benefits)}</p>
+                                <strong>🎯 Match Score:</strong>
+                                <p>{trial.analysis.suitability_score}</p>
                               </div>
                             )}
-                            {trial.criteria && (
+                            
+                            {/* Eligibility Assessment */}
+                            {trial.analysis?.eligibility_assessment && (
                               <div className="clinical__trial-criteria">
-                                <strong>Eligibility Criteria:</strong>
-                                <p>{typeof trial.criteria === 'string' ? trial.criteria : JSON.stringify(trial.criteria)}</p>
+                                <strong>✅ Eligibility:</strong>
+                                <p>{trial.analysis.eligibility_assessment}</p>
                               </div>
                             )}
-                            {trial.summary && (
+                            
+                            {/* Potential Benefits */}
+                            {trial.analysis?.potential_benefits && (
                               <div className="clinical__trial-criteria">
-                                <strong>Summary:</strong>
-                                <p>{typeof trial.summary === 'string' ? trial.summary : JSON.stringify(trial.summary)}</p>
+                                <strong>💡 Potential Benefits:</strong>
+                                <p>{trial.analysis.potential_benefits}</p>
+                              </div>
+                            )}
+                            
+                            {/* Risks and Considerations */}
+                            {trial.analysis?.risks_considerations && (
+                              <div className="clinical__trial-criteria">
+                                <strong>⚠️ Risks & Considerations:</strong>
+                                <p>{trial.analysis.risks_considerations}</p>
+                              </div>
+                            )}
+                            
+                            {/* Recommendation */}
+                            {trial.analysis?.recommendation && (
+                              <div className="clinical__trial-criteria">
+                                <strong>💭 Recommendation:</strong>
+                                <p>{trial.analysis.recommendation}</p>
+                              </div>
+                            )}
+                            
+                            {/* Trial Details */}
+                            {trial.conditions && (
+                              <div className="clinical__trial-criteria">
+                                <strong>🏥 Conditions:</strong>
+                                <p>{trial.conditions}</p>
+                              </div>
+                            )}
+                            
+                            {trial.phase && (
+                              <div className="clinical__trial-criteria">
+                                <strong>🔬 Phase:</strong>
+                                <p>{trial.phase}</p>
+                              </div>
+                            )}
+                            
+                            {trial.status && (
+                              <div className="clinical__trial-criteria">
+                                <strong>📊 Status:</strong>
+                                <p>{trial.status}</p>
+                              </div>
+                            )}
+                            
+                            {trial.url && (
+                              <div className="clinical__trial-criteria">
+                                <strong>🔗 More Info:</strong>
+                                <a href={trial.url} target="_blank" rel="noopener noreferrer" className="clinical__trial-link">
+                                  View on ClinicalTrials.gov
+                                </a>
                               </div>
                             )}
                           </>

@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-// Base URL for Hugging Face backend
-const BASE_URL = process.env.REACT_APP_FLASK_BACKEND_URL || 'https://gungoo-medi-match-backend.hf.space';
+// Base URL for local backend
+const BASE_URL = process.env.REACT_APP_FLASK_BACKEND_URL || 'http://127.0.0.1:5000';
 
 // Create axios instance with default configuration
 const api = axios.create({
@@ -61,7 +61,7 @@ export const medicalAPI = {
 export const clinicalAPI = {
   // Fetch clinical trials based on user profile
   fetchClinicalTrials: async (userProfile) => {
-    const response = await api.post('/fetch_clinical_trials', userProfile);
+    const response = await api.post('/search_clinical_trials', userProfile);
     return response.data;
   },
 };
