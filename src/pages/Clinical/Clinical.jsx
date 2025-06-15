@@ -15,6 +15,14 @@ export default function Clinical() {
   const [loading, setLoading] = useState(false);
   const [backendStatus, setBackendStatus] = useState("checking");
 
+  // Helper function to safely render object values
+  const renderValue = (value) => {
+    if (typeof value === 'object' && value !== null) {
+      return JSON.stringify(value, null, 2);
+    }
+    return String(value);
+  };
+
   // Check backend status on component mount
   useEffect(() => {
     const checkBackend = async () => {
@@ -316,7 +324,7 @@ export default function Clinical() {
                             {trial.analysis?.trial_summary && (
                               <div className="clinical__trial-criteria">
                                 <strong>📋 Trial Overview:</strong>
-                                <p>{trial.analysis.trial_summary}</p>
+                                <p>{renderValue(trial.analysis.trial_summary)}</p>
                               </div>
                             )}
                             
@@ -324,7 +332,7 @@ export default function Clinical() {
                             {trial.analysis?.suitability_score && (
                               <div className="clinical__trial-criteria">
                                 <strong>🎯 Match Score:</strong>
-                                <p>{trial.analysis.suitability_score}</p>
+                                <p>{renderValue(trial.analysis.suitability_score)}</p>
                               </div>
                             )}
                             
@@ -332,7 +340,7 @@ export default function Clinical() {
                             {trial.analysis?.eligibility_assessment && (
                               <div className="clinical__trial-criteria">
                                 <strong>✅ Eligibility:</strong>
-                                <p>{trial.analysis.eligibility_assessment}</p>
+                                <p>{renderValue(trial.analysis.eligibility_assessment)}</p>
                               </div>
                             )}
                             
@@ -340,7 +348,7 @@ export default function Clinical() {
                             {trial.analysis?.potential_benefits && (
                               <div className="clinical__trial-criteria">
                                 <strong>💡 Potential Benefits:</strong>
-                                <p>{trial.analysis.potential_benefits}</p>
+                                <p>{renderValue(trial.analysis.potential_benefits)}</p>
                               </div>
                             )}
                             
@@ -348,7 +356,7 @@ export default function Clinical() {
                             {trial.analysis?.risks_considerations && (
                               <div className="clinical__trial-criteria">
                                 <strong>⚠️ Risks & Considerations:</strong>
-                                <p>{trial.analysis.risks_considerations}</p>
+                                <p>{renderValue(trial.analysis.risks_considerations)}</p>
                               </div>
                             )}
                             
@@ -356,7 +364,23 @@ export default function Clinical() {
                             {trial.analysis?.recommendation && (
                               <div className="clinical__trial-criteria">
                                 <strong>💭 Recommendation:</strong>
-                                <p>{trial.analysis.recommendation}</p>
+                                <p>{renderValue(trial.analysis.recommendation)}</p>
+                              </div>
+                            )}
+                            
+                            {/* Inclusion Criteria */}
+                            {trial.inclusion_criteria && (
+                              <div className="clinical__trial-criteria">
+                                <strong>✅ Inclusion Criteria:</strong>
+                                <p>{renderValue(trial.inclusion_criteria)}</p>
+                              </div>
+                            )}
+                            
+                            {/* Exclusion Criteria */}
+                            {trial.exclusion_criteria && (
+                              <div className="clinical__trial-criteria">
+                                <strong>❌ Exclusion Criteria:</strong>
+                                <p>{renderValue(trial.exclusion_criteria)}</p>
                               </div>
                             )}
                             
@@ -364,21 +388,21 @@ export default function Clinical() {
                             {trial.conditions && (
                               <div className="clinical__trial-criteria">
                                 <strong>🏥 Conditions:</strong>
-                                <p>{trial.conditions}</p>
+                                <p>{renderValue(trial.conditions)}</p>
                               </div>
                             )}
                             
                             {trial.phase && (
                               <div className="clinical__trial-criteria">
                                 <strong>🔬 Phase:</strong>
-                                <p>{trial.phase}</p>
+                                <p>{renderValue(trial.phase)}</p>
                               </div>
                             )}
                             
                             {trial.status && (
                               <div className="clinical__trial-criteria">
                                 <strong>📊 Status:</strong>
-                                <p>{trial.status}</p>
+                                <p>{renderValue(trial.status)}</p>
                               </div>
                             )}
                             
