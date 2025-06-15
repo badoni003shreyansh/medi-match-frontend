@@ -25,7 +25,7 @@ const useCases = [
 const UseCase = () => {
   return (
     <section className="usecase-section">
-      <h1 className="usecase-heading">Medi-Match AI Use Cases</h1>
+      <h1 className="usecase-heading">Medi-Match AI Uses</h1>
       <p className="usecase-subtitle">Explore how Medi-Match AI connects you to clinical trials and research opportunities tailored to your needs</p>
       <hr className="usecase-divider" />
       <br /><br />

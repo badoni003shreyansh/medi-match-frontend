@@ -91,6 +91,10 @@
     color: #fff;
 }
 
+.contributor-card__links svg {
+  background: transparent !important;  /* ensures icons stay transparent */
+}
+
 .contributor-card__links a:hover {
     transform: translateY(-3px) scale(1.05);
     background: linear-gradient(135deg, #7c3aed, #2563eb);
