@@ -1,0 +1,454 @@
+/* ─── Clinical Trial Component Styles ─────────────── */
+.clinical {
+  min-height: 100vh;
+  background: #fafbfc;
+  padding: 2rem 0;
+}
+
+.clinical__container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  position: relative;
+}
+
+.clinical__back-link:hover {
+  color: #374151;
+}
+
+/* ─── Content ──────────────────────────────────────── */
+.clinical__content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ─── Header ───────────────────────────────────────── */
+.clinical__header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.clinical__title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #8b5cf6 0%, #3b82f6 50%, #06b6d4 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
+}
+
+.clinical__subtitle {
+  font-size: 1.125rem;
+  color: #6b7280;
+  font-weight: 400;
+}
+
+/* ─── Main Layout ──────────────────────────────────── */
+.clinical__main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+/* ─── Section Headers ──────────────────────────────── */
+.clinical__form-section {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.clinical__section-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.clinical__section-icon {
+  font-size: 1.5rem;
+  background: linear-gradient(135deg, #2563eb, #7c3aed);
+  padding: 0.75rem;
+  border-radius: 12px;
+  color: white;
+  min-width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.clinical__section-title {
+  font-size: 1.375rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 0.25rem;
+}
+
+.clinical__section-subtitle {
+  font-size: 0.9375rem;
+  color: #6b7280;
+  line-height: 1.5;
+}
+
+/* ─── Form Styles ──────────────────────────────────── */
+.clinical__form {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.clinical__form-group {
+  margin-bottom: 1.5rem;
+}
+
+.clinical__label {
+  display: block;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 0.5rem;
+  font-size: 0.9375rem;
+}
+
+.clinical__input,
+.clinical__textarea {
+  width: 100%;
+  padding: 0.875rem 1rem;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 0.9375rem;
+  transition: all 0.3s ease;
+  background: #fafbfc;
+}
+
+.clinical__input:focus,
+.clinical__textarea:focus {
+  outline: none;
+  border-color: #3b82f6;
+  background: white;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.clinical__textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.clinical__submit-btn {
+  width: 100%;
+  background: linear-gradient(135deg, #8b5cf6 0%, #3b82f6 100%);
+  color: white;
+  font-weight: 600;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
+}
+
+.clinical__submit-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(139, 92, 246, 0.4);
+}
+
+.clinical__submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: 0 4px 15px rgba(139, 92, 246, 0.2);
+}
+
+/* ─── Results Section ──────────────────────────────── */
+.clinical__results {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.clinical__results-section {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.clinical__no-results {
+  text-align: center;
+  color: #6b7280;
+}
+
+.clinical__no-results-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  opacity: 0.5;
+}
+
+.clinical__no-results-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 0.5rem;
+}
+
+.clinical__no-results-text {
+  font-size: 0.9375rem;
+  line-height: 1.5;
+}
+
+/* Clinical Trials Results */
+.clinical__trials-list {
+  max-height: 500px;
+  overflow-y: auto;
+  padding-right: 0.5rem;
+}
+
+.clinical__trial-card {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  transition: all 0.3s ease;
+}
+
+.clinical__trial-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.clinical__trial-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 0.75rem;
+}
+
+.clinical__trial-description {
+  font-size: 0.9375rem;
+  color: #4b5563;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.clinical__trial-criteria {
+  background: #eff6ff;
+  border: 1px solid #dbeafe;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-top: 1rem;
+}
+
+.clinical__trial-criteria strong {
+  color: #1e40af;
+  font-weight: 600;
+}
+
+.clinical__trial-criteria p {
+  margin-top: 0.5rem;
+  color: #374151;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+/* Error Message */
+.clinical__error-message {
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 8px;
+  padding: 1rem;
+  color: #991b1b;
+}
+
+.clinical__error-message h4 {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.clinical__error-message p {
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+/* Loading Spinner */
+.clinical__loading-spinner {
+  text-align: center;
+  color: #6b7280;
+}
+
+.clinical__spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #e5e7eb;
+  border-top: 4px solid #3b82f6;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 1rem;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.clinical__results-content {
+  padding: 1rem;
+}
+
+.clinical__scroll-container {
+  max-height: 400px; /* adjust height as needed */
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding-right: 0.5rem;
+}
+
+/* Individual trial card */
+.clinical__trial-card {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.clinical__trial-card p {
+  margin-bottom: 0.5rem;
+}
+
+.clinical__trial-card p strong {
+  width: 100px;
+}
+
+.clinical__scroll-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.clinical__scroll-container::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+/*  keep horizontal spacing tidy on wide screens */
+@media (min-width: 1200px) {
+  .clinical__main {
+    gap: 3rem;
+  }
+}
+
+/* ─── Responsive Design ────────────────────────────── */
+
+/* Large screens */
+@media (min-width: 1200px) {
+  .clinical__title {
+    font-size: 3rem;
+  }
+
+  .clinical__main {
+    gap: 4rem;
+  }
+}
+
+/* Medium screens */
+@media (max-width: 1024px) {
+  .clinical__main {
+    gap: 2rem;
+  }
+
+  .clinical__brand {
+    position: static;
+    justify-content: center;
+    margin-bottom: 2rem;
+  }
+
+  .clinical__container {
+    padding: 0 1rem;
+  }
+}
+
+/* Small screens */
+@media (max-width: 768px) {
+  .clinical {
+    padding: 1rem 0;
+  }
+
+  .clinical__main {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .clinical__title {
+    font-size: 2rem;
+  }
+
+  .clinical__subtitle {
+    font-size: 1rem;
+  }
+
+  .clinical__form,
+  .clinical__results {
+    padding: 1.5rem;
+  }
+
+  .clinical__section-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .clinical__section-icon {
+    font-size: 1.25rem;
+  }
+
+  .clinical__back-link {
+    margin-bottom: 1rem;
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 480px) {
+  .clinical__container {
+    padding: 0 0.75rem;
+  }
+
+  .clinical__form,
+  .clinical__results {
+    padding: 1rem;
+  }
+
+  .clinical__title {
+    font-size: 1.75rem;
+  }
+
+  .clinical__header {
+    margin-bottom: 2rem;
+  }
+
+  .clinical__brand-text {
+    font-size: 1rem;
+  }
+
+  .clinical__logo {
+    width: 36px;
+    height: 36px;
+    font-size: 1.125rem;
+  }
+}

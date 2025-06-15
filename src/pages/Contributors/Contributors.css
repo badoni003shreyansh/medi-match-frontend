@@ -1,0 +1,110 @@
+.contributors {
+    padding: 4rem 1.5rem;
+    background: #fafbfc;
+    text-align: center;
+    font-family: 'Outfit', sans-serif;
+}
+
+.contributors__heading {
+    font-size: 2.5rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #8b5cf6 0%, #3b82f6 50%, #06b6d4 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+}
+
+.contributors__subtitle {
+    font-size: 1.125rem;
+    color: #6b7280;
+    font-weight: 400;
+    margin-bottom: 1.5rem;
+}
+
+.contributors__grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+
+/* ── Card ───────────────────────────────────────── */
+.contributor-card {
+    width: 280px;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 18px;
+    padding: 2rem 1.5rem;
+    box-shadow: 0 20px 25px -8px rgba(0, 0, 0, 0.08),
+        0 10px 10px -6px rgba(0, 0, 0, 0.04);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.contributor-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 28px 30px -10px rgba(0, 0, 0, 0.12);
+}
+
+.contributor-card__avatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 1.25rem;
+    border: 3px solid #ffffff;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+}
+
+.contributor-card__name {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 0.25rem;
+}
+
+.contributor-card__role {
+    font-size: 0.95rem;
+    color: #6b7280;
+    margin-bottom: 1.25rem;
+}
+
+/* ── Social links ──────────────────────────────── */
+.contributor-card__links {
+    display: flex;
+    justify-content: center;
+    gap: 1.2rem;
+}
+
+.contributor-card__links a {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #2563eb, #7c3aed);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease, background 0.3s ease;
+    color: #fff;
+}
+
+.contributor-card__links a:hover {
+    transform: translateY(-3px) scale(1.05);
+    background: linear-gradient(135deg, #7c3aed, #2563eb);
+}
+
+/* ── Responsive ───────────────────────────────── */
+@media (max-width: 480px) {
+    .contributors__heading {
+        font-size: 1.9rem;
+    }
+
+    .contributor-card {
+        width: 100%;
+        max-width: 320px;
+        padding: 1.75rem 1.25rem;
+    }
+}
