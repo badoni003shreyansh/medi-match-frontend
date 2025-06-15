@@ -139,9 +139,9 @@ const Medical = () => {
           {/* Backend Status Indicator */}
           <div className="backend-status">
             <span className={`status-indicator ${backendStatus}`}>
-              {backendStatus === "checking" && "🔄 Checking backend..."}
-              {backendStatus === "healthy" && "✅ Backend connected"}
-              {backendStatus === "unhealthy" && "❌ Backend unavailable"}
+              {backendStatus === "checking" && "🔄 Checking AI..."}
+              {backendStatus === "healthy" && "✅ AI connected"}
+              {backendStatus === "unhealthy" && "❌ AI unavailable"}
             </span>
           </div>
         </div>
