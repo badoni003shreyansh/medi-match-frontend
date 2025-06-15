@@ -15,11 +15,9 @@ const api = axios.create({
 // Request interceptor to add loading states
 api.interceptors.request.use(
   (config) => {
-    console.log(`🚀 Making request to: ${config.url}`);
     return config;
   },
   (error) => {
-    console.error('❌ Request error:', error);
     return Promise.reject(error);
   }
 );
@@ -27,7 +25,6 @@ api.interceptors.request.use(
 // Response interceptor to handle common errors
 api.interceptors.response.use(
   (response) => {
-    console.log(`✅ Response from: ${response.config.url}`, response.data);
     return response;
   },
   (error) => {
@@ -56,9 +53,6 @@ export const medicalAPI = {
         'Content-Type': 'multipart/form-data',
       },
     });
-    
-    console.log("🔍 API Response data:", response.data);
-    console.log("🔍 API Response data type:", typeof response.data);
     
     return response.data;
   },
