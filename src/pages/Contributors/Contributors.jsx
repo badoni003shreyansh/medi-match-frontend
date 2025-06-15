@@ -1,14 +1,13 @@
 import React from 'react';
 import './Contributors.css';
 
-// 👉  Replace avatar/social links with real data
 const contributors = [
   {
     name: 'Abde Kuvazar',
     // role: 'AI Research Lead',
-    avatar: 'https://i.pravatar.cc/150?img=12',
-    linkedin: 'https://www.linkedin.com/in/lakshya-jangid-3b5453300/',
-    github: 'https://github.com/lakshyajangid28',
+    avatar: '/abde.jpeg',
+    linkedin: 'https://www.linkedin.com/in/abdemanaf-kuvazarwala-723324201/',
+    github: 'https://github.com/Abde-Kuvazar',
   },
   {
     name: 'Lakshya Jangid',
