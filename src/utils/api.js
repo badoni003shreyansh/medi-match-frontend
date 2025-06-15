@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 // Base URL for local backend
-const BASE_URL = process.env.REACT_APP_FLASK_BACKEND_URL || 'http://127.0.0.1:5000';
+const BASE_URL = process.env.REACT_APP_FLASK_BACKEND_URL;
 
 // Create axios instance with default configuration
 const api = axios.create({
